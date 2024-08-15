@@ -52,31 +52,31 @@ class Triangle extends Shape {
 }
 
 class Rectangle extends Shape {
+    private double length;
     private double width;
-    private double height;
 
+    public double getLength(){ return length; }
     public double getWidth(){ return width; }
-    public double getHeight(){ return height; }
+    public void setLength(double length){ this.length = length; }
     public void setWidth(double width){ this.width = width; }
-    public void setHeight(double height){ this.height = height; }
 
-    public Rectangle(double width, double height){
+    public Rectangle(double length, double width){
+        this.length = length;
         this.width = width;
-        this.height = height;
     }
 
     public double getPerimeter(){
-        return (width + height) * 2;
+        return (length + width) * 2;
     }
 
     public double getArea(){
-        return width * height;
+        return length * width;
     }
 
     public void printResult(){
         System.out.println("-----Rectangle-----");
-        System.out.println("Width: " + width);
-        System.out.println("Height: " + height);
+        System.out.println("Width: " + length);
+        System.out.println("Height: " + width);
         System.out.println("Area: " + getArea());
         System.out.println("Perimeter: " + getPerimeter());
     }
